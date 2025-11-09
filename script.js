@@ -1,23 +1,32 @@
-// 导航栏滚动效果
+// Navigation scroll effect
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+        navbar.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
     }
 });
 
-// 移动端菜单切换
+// Mobile menu toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const sidebar = document.querySelector('.sidebar');
+const sidebarToggle = document.querySelector('.sidebar-toggle');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
+// Sidebar toggle button
+if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+    });
+}
 
-// 点击菜单项后关闭移动端菜单
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+}
+
+// Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -25,95 +34,52 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
-// 平滑滚动
+// Mobile sidebar toggle (for small screens)
+function toggleSidebar() {
+    if (window.innerWidth <= 768) {
+        sidebar.classList.toggle('active');
+    }
+}
+
+// Close sidebar when clicking outside on mobile
+document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+        if (sidebar && sidebar.classList.contains('active')) {
+            if (!sidebar.contains(e.target) && 
+                !sidebarToggle.contains(e.target) && 
+                !hamburger.contains(e.target)) {
+                sidebar.classList.remove('active');
+            }
+        }
+    }
+});
+
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offsetTop = target.offsetTop - 70;
+            const offsetTop = target.offsetTop - 80;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
             });
-        }
-    });
-});
-
-// 滚动动画
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// 观察需要动画的元素
-document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.skill-card, .project-card, .about-content, .contact-content');
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-});
-
-// 表单提交处理
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // 这里可以添加实际的表单提交逻辑
-        // 例如发送到后端API或使用邮件服务
-        
-        // 显示成功消息
-        const formData = new FormData(contactForm);
-        const name = formData.get('name') || contactForm.querySelector('input[type="text"]').value;
-        
-        alert(`谢谢 ${name}！你的消息已收到。我会尽快回复你。`);
-        contactForm.reset();
-    });
-}
-
-// 数字计数动画
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16);
-    const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-            element.textContent = target + '+';
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(start) + '+';
-        }
-    }, 16);
-}
-
-// 当统计数字进入视口时开始动画
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumber = entry.target;
-            const target = parseInt(statNumber.textContent);
-            if (!statNumber.classList.contains('animated')) {
-                statNumber.classList.add('animated');
-                animateCounter(statNumber, target);
+            // Close mobile menu and sidebar after clicking
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                sidebar.classList.remove('active');
             }
         }
     });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.stat-number').forEach(stat => {
-    statsObserver.observe(stat);
 });
 
+// Handle window resize
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+        sidebar.classList.remove('active');
+    }
+});

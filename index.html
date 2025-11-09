@@ -1,253 +1,262 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="个人主页 - 欢迎来到我的个人网站">
-    <title>我的个人主页</title>
+    <meta name="description" content="Personal Portfolio Website">
+    <!-- 修改这里：更改页面标题 -->
+    <title>Your Name - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">我的主页</div>
-            <ul class="nav-menu">
-                <li><a href="#home">首页</a></li>
-                <li><a href="#about">关于我</a></li>
-                <li><a href="#skills">技能</a></li>
-                <li><a href="#projects">项目</a></li>
-                <li><a href="#contact">联系</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- 首页部分 -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="greeting">你好，我是</span>
-                <span class="name">你的名字</span>
-            </h1>
-            <p class="hero-subtitle">一名充满热情的程序员 / 设计师 / 开发者</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">联系我</a>
-                <a href="#projects" class="btn btn-secondary">查看作品</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <!-- 关于我部分 -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">关于我</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-user"></i>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <p>欢迎来到我的个人主页！我是一名热爱编程和技术的开发者。</p>
-                    <p>我喜欢学习新技术，解决复杂问题，并创造有价值的项目。在我的空闲时间，我会探索最新的技术趋势，参与开源项目，或者开发一些有趣的小工具。</p>
-                    <p>我相信持续学习和实践是成长的关键，我一直在寻找新的挑战和机会来提升自己的技能。</p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">项目</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">100+</div>
-                            <div class="stat-label">贡献</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">5+</div>
-                            <div class="stat-label">年经验</div>
-                        </div>
-                    </div>
+    <!-- Fixed Left Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <!-- 修改这里：添加你的照片，替换下面的图标为 <img src="your-photo.jpg" alt="Your Name"> -->
+            <div class="sidebar-photo">
+                <div class="photo-placeholder">
+                    <i class="fas fa-user"></i>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- 技能部分 -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">技能</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-html5"></i>
-                    </div>
-                    <h3>前端开发</h3>
-                    <p>HTML, CSS, JavaScript, React, Vue</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3>后端开发</h3>
-                    <p>Node.js, Python, Java, 数据库</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>移动开发</h3>
-                    <p>React Native, Flutter</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>工具与框架</h3>
-                    <p>Git, Docker, CI/CD, 云服务</p>
-                </div>
+            <!-- 修改这里：更改你的名字 -->
+            <h2 class="sidebar-name">Your Name</h2>
+            <!-- 修改这里：更改你的简介 -->
+            <p class="sidebar-bio">A passionate developer who loves creating web applications and solving complex problems. I enjoy learning new technologies and building meaningful projects.</p>
+            <div class="sidebar-contact">
+                <!-- 修改这里：更改联系方式 -->
+                <a href="mailto:your.email@example.com" class="contact-link">
+                    <i class="fas fa-envelope"></i> your.email@example.com
+                </a>
+                <a href="https://github.com/yourusername" class="contact-link" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
             </div>
         </div>
-    </section>
+    </aside>
 
-    <!-- 项目部分 -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">项目作品</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-laptop-code"></i>
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <!-- 修改这里：根据需要调整导航链接 -->
+                    <li><a href="#homepage">Homepage</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#honors">Honors</a></li>
+                    <li><a href="#educations">Educations</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Homepage Section -->
+        <section id="homepage" class="section">
+            <div class="container">
+                <h1 class="section-title">Welcome</h1>
+                <!-- 修改这里：更改欢迎内容 -->
+                <p class="section-text">Welcome to my personal website. I'm a developer passionate about creating innovative solutions and exploring new technologies.</p>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <!-- 修改这里：更改关于我的描述 -->
+                <div class="section-content">
+                    <p>Welcome to my portfolio! I'm a passionate developer who loves creating web applications and solving complex problems.</p>
+                    <p>I enjoy learning new technologies and building projects that make a difference. In my free time, I explore the latest tech trends and contribute to open source projects.</p>
+                    <p>I believe in continuous learning and always seek new challenges to improve my skills.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <div class="container">
+                <h2 class="section-title">Publications</h2>
+                <div class="publications-list">
+                    <!-- 修改这里：添加你的出版物 -->
+                    <div class="publication-item">
+                        <h3>Publication Title 1</h3>
+                        <p class="publication-authors">Author 1, Author 2, Your Name</p>
+                        <p class="publication-venue">Journal/Conference Name, Year</p>
+                        <a href="#" class="publication-link">View Paper</a>
+                    </div>
+                    <div class="publication-item">
+                        <h3>Publication Title 2</h3>
+                        <p class="publication-authors">Author 1, Your Name, Author 3</p>
+                        <p class="publication-venue">Journal/Conference Name, Year</p>
+                        <a href="#" class="publication-link">View Paper</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <!-- 修改这里：添加或修改项目卡片 -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Project Name 1</h3>
+                            <p>A great project that showcases my technical skills and creativity.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                            </div>
+                            <!-- 修改这里：更改项目链接 -->
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3>项目名称 1</h3>
-                        <p>这是一个很棒的项目描述。展示了我的技术能力和创造力。</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Project Name 2</h3>
+                            <p>Another impressive project demonstrating my expertise in mobile development.</p>
+                            <div class="project-tags">
+                                <span class="tag">React Native</span>
+                                <span class="tag">Firebase</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> 演示</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Project Name 3</h3>
+                            <p>A data analysis tool that helps users better understand and visualize data.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">D3.js</span>
+                                <span class="tag">Flask</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
+            </div>
+        </section>
+
+        <!-- Honors Section -->
+        <section id="honors" class="section">
+            <div class="container">
+                <h2 class="section-title">Honors & Awards</h2>
+                <div class="honors-list">
+                    <!-- 修改这里：添加你的荣誉和奖项 -->
+                    <div class="honor-item">
+                        <h3>Award Name 1</h3>
+                        <p class="honor-org">Organization Name</p>
+                        <p class="honor-year">2024</p>
+                    </div>
+                    <div class="honor-item">
+                        <h3>Award Name 2</h3>
+                        <p class="honor-org">Organization Name</p>
+                        <p class="honor-year">2023</p>
+                    </div>
+                    <div class="honor-item">
+                        <h3>Scholarship Name</h3>
+                        <p class="honor-org">University Name</p>
+                        <p class="honor-year">2022</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educations Section -->
+        <section id="educations" class="section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-list">
+                    <!-- 修改这里：添加你的教育背景 -->
+                    <div class="education-item">
+                        <h3>Degree Name</h3>
+                        <p class="education-school">University Name</p>
+                        <p class="education-period">2020 - 2024</p>
+                        <p class="education-desc">Description of your studies and achievements.</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Degree Name</h3>
+                        <p class="education-school">University Name</p>
+                        <p class="education-period">2016 - 2020</p>
+                        <p class="education-desc">Description of your studies and achievements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <!-- 修改这里：添加或修改技能卡片 -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h3>Frontend</h3>
+                        <p>HTML, CSS, JavaScript, React, Vue</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Backend</h3>
+                        <p>Node.js, Python, Java, Databases</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
+                        <h3>Mobile</h3>
+                        <p>React Native, Flutter</p>
                     </div>
-                    <div class="project-content">
-                        <h3>项目名称 2</h3>
-                        <p>另一个令人印象深刻的项目，展示了我在移动开发方面的专长。</p>
-                        <div class="project-tags">
-                            <span class="tag">React Native</span>
-                            <span class="tag">Firebase</span>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-tools"></i>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> 演示</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>项目名称 3</h3>
-                        <p>一个数据分析工具，帮助用户更好地理解和可视化数据。</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">D3.js</span>
-                            <span class="tag">Flask</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> 演示</a>
-                        </div>
+                        <h3>Tools</h3>
+                        <p>Git, Docker, CI/CD, Cloud Services</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 联系部分 -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">联系我</h2>
-            <p class="contact-description">如果你有任何问题或想合作，欢迎联系我！</p>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>邮箱</h3>
-                            <p>your.email@example.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>GitHub</h3>
-                            <p>github.com/yourusername</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>LinkedIn</h3>
-                            <p>linkedin.com/in/yourprofile</p>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="你的名字" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="你的邮箱" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="留言内容" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">发送消息</button>
-                </form>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <!-- 修改这里：更改版权信息 -->
+                <p>&copy; 2024 Your Name. All rights reserved.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 我的个人主页. 保留所有权利.</p>
-            <div class="social-links">
-                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
