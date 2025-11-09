@@ -53,6 +53,16 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.sidebar-photo-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    display: block;
+    margin: 0 auto;
+}
+
 .photo-placeholder {
     width: 180px;
     height: 180px;
@@ -526,6 +536,11 @@ body {
 
     .sidebar {
         width: 100%;
+    }
+
+    .sidebar-photo-img {
+        width: 150px;
+        height: 150px;
     }
 
     .photo-placeholder {
