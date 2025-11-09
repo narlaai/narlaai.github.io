@@ -51,14 +51,23 @@ body {
 
 .sidebar-photo {
     margin-bottom: 1.5rem;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .sidebar-photo-img {
-    width: 180px;
-    height: 180px;
+    width: 100%;
+    height: 100%;
+    max-width: 180px;
+    max-height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--primary-color);
     display: block;
     margin: 0 auto;
 }
@@ -538,9 +547,16 @@ body {
         width: 100%;
     }
 
-    .sidebar-photo-img {
+    .sidebar-photo {
         width: 150px;
         height: 150px;
+    }
+
+    .sidebar-photo-img {
+        width: 100%;
+        height: 100%;
+        max-width: 150px;
+        max-height: 150px;
     }
 
     .photo-placeholder {
