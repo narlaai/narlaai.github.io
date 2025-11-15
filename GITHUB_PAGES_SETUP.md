@@ -4,17 +4,17 @@
 
 ### 1. 仓库命名（最重要！）
 
-你的仓库名**必须**是：`narlaai.github.io`
+你的仓库名**必须**是：`yourname.github.io`
 
-- ✅ 正确：`narlaai.github.io`
-- ❌ 错误：`my-homepage`、`portfolio`、`narlaai.github.io-main` 等
+- ✅ 正确：`yourname.github.io`
+- ❌ 错误：`my-homepage`、`portfolio`、`yourname.github.io-main` 等
 
 ### 2. 文件结构
 
 所有文件必须在仓库的**根目录**下：
 
 ```
-narlaai.github.io/
+yourname.github.io/
 ├── index.html
 ├── styles.css
 ├── script.js
@@ -26,7 +26,7 @@ narlaai.github.io/
 
 ### 3. GitHub Pages 设置
 
-1. 进入你的仓库：`https://github.com/narlaai/narlaai.github.io`
+1. 进入你的仓库：`https://github.com/yourname/yourname.github.io`
 2. 点击 **Settings**（设置）
 3. 在左侧菜单中找到 **Pages**
 4. 设置：
@@ -37,15 +37,15 @@ narlaai.github.io/
 ### 4. 等待部署
 
 - GitHub Pages 通常需要 **1-5 分钟** 完成部署
-- 部署完成后，访问 `https://narlaai.github.io/` 即可看到你的网站
+- 部署完成后，访问 `https://yourname.github.io/` 即可看到你的网站
 
 ### 5. 验证文件是否可访问
 
 在浏览器中直接访问以下链接，确认文件存在：
 
-- ✅ `https://narlaai.github.io/styles.css` - 应该显示 CSS 代码
-- ✅ `https://narlaai.github.io/script.js` - 应该显示 JavaScript 代码
-- ✅ `https://narlaai.github.io/index.html` - 应该显示 HTML 页面
+- ✅ `https://yourname.github.io/styles.css` - 应该显示 CSS 代码
+- ✅ `https://yourname.github.io/script.js` - 应该显示 JavaScript 代码
+- ✅ `https://yourname.github.io/index.html` - 应该显示 HTML 页面
 
 如果显示 404，说明文件未上传或路径错误。
 
@@ -61,7 +61,7 @@ narlaai.github.io/
 
 ### 检查浏览器控制台
 
-1. 访问 `https://narlaai.github.io/`
+1. 访问 `https://yourname.github.io/`
 2. 按 `F12` 打开开发者工具
 3. 切换到 **Console**（控制台）标签
 4. 查看是否有红色错误信息
@@ -94,16 +94,16 @@ narlaai.github.io/
 
 #### 错误 3：仓库名不正确
 
-**原因**：仓库名不是 `narlaai.github.io`
+**原因**：仓库名不是 `yourname.github.io`
 
 **解决**：
-1. 创建新仓库，命名为 `narlaai.github.io`
+1. 创建新仓库，命名为 `yourname.github.io`
 2. 上传所有文件到新仓库
 3. 在 Settings → Pages 中启用 Pages
 
 ## 📝 快速检查清单
 
-- [ ] 仓库名是 `narlaai.github.io`
+- [ ] 仓库名是 `yourname.github.io`
 - [ ] `index.html` 在根目录
 - [ ] `styles.css` 在根目录
 - [ ] `script.js` 在根目录
@@ -131,5 +131,6 @@ narlaai.github.io/
 
 ---
 
-**记住**：访问 `https://narlaai.github.io/` 时，GitHub Pages 会自动查找根目录下的 `index.html` 文件。确保所有文件都在根目录，路径使用相对路径（如 `styles.css` 而不是 `./styles.css` 或 `/styles.css`）。
+**记住**：访问 `https://yourname.github.io/` 时，GitHub Pages 会自动查找根目录下的 `index.html` 文件。确保所有文件都在根目录，路径使用相对路径（如 `styles.css` 而不是 `./styles.css` 或 `/styles.css`）。
+
 
