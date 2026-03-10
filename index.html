@@ -1,102 +1,89 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Portfolio Website">
-    <!-- 修改这里：更改页面标题 -->
-    <title>Nianzu Lyu - Homepage</title>
+    <meta name="description" content="Nianzu Lyu's personal homepage - mechanical engineering, automation, and code-driven experiments.">
+    <title>Nianzu Lyu | Personal Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- 修改这里：在网页导航添加你的照片，使用网站favicon.io可直接导出 -->
-    <!-- <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="./images/favicon_io/site.webmanifest"> 我把这张换掉了-->
-
-    <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-    <link rel="manifest" href="/images/favicon/site.webmanifest" />
-    
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Nianzu Lyu">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
 </head>
-    
 <body>
-    <!-- Fixed Left Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-content">
-            <!-- 修改这里：添加你的照片，将 "wei.jpg" 改为你的照片文件名 -->
             <div class="sidebar-photo">
-                <img src="images/wei.jpg" alt="Nianzu Lyu" class="sidebar-photo-img">
+                <img src="images/wei.jpg" alt="Portrait of Nianzu Lyu" class="sidebar-photo-img">
             </div>
-            <!-- 修改这里：更改你的名字 -->
-            <h2 class="sidebar-name">Nianzu Lyu</h2>
-            <!-- 修改这里：更改你的简介 -->
-            <p class="sidebar-bio">Undergraduate student at SJTU, majoring in ME.</p>
+            <p class="sidebar-status">
+                <span class="status-dot"></span>
+                Undergraduate at SJTU
+            </p>
+            <h1 class="sidebar-name">Nianzu Lyu</h1>
+            <p class="sidebar-bio">
+                Mechanical engineering student exploring automation, data analysis,
+                and code-powered tools for real-world experiments.
+            </p>
+            <div class="sidebar-meta">
+                <span class="meta-pill">Shanghai</span>
+                <span class="meta-pill">Mechanical Engineering</span>
+                <span class="meta-pill">Python / C++</span>
+            </div>
             <div class="sidebar-contact">
-                <!-- 修改这里：更改联系方式 -->
                 <a href="mailto:lnzone123@sjtu.edu.cn" class="contact-link">
-                    <i class="fas fa-envelope"></i> Email
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
                 </a>
-                <a href="https://github.com/narlaai" class="contact-link" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">
-                    <i class="fab fa-linkedin"></i> LinkedIn
+                <a href="https://github.com/narlaai" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
                 </a>
             </div>
         </div>
     </aside>
 
-    <!-- Main Content Wrapper -->
     <div class="main-wrapper">
-        <!-- Navigation -->
         <nav class="navbar">
-            <div class="container">
+            <div class="container nav-shell">
                 <button class="sidebar-toggle" aria-label="Toggle sidebar">
                     <i class="fas fa-bars"></i>
                 </button>
+                <a href="#homepage" class="nav-brand">NL</a>
                 <ul class="nav-menu">
-                    <!-- 修改这里：根据需要调整导航链接 -->
-                    <li><a href="#homepage">Homepage</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#homepage">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#publications">Focus</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#honors">Honors</a></li>
-                    <li><a href="#educations">Educations</a></li>
+                    <li><a href="#educations">Education</a></li>
                     <li><a href="#skills">Skills</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
         </nav>
 
-        <!-- Module containers - 内容将从 modules 文件夹动态加载 -->
-        <div id="homepage-container"></div>
-        <div id="about-container"></div>
-        <div id="publications-container"></div>
-        <div id="projects-container"></div>
-        <div id="honors-container"></div>
-        <div id="educations-container"></div>
-        <div id="skills-container"></div>
-        <div id="footer-container"></div>
+        <main>
+            <div id="homepage-container"></div>
+            <div id="about-container"></div>
+            <div id="publications-container"></div>
+            <div id="projects-container"></div>
+            <div id="educations-container"></div>
+            <div id="skills-container"></div>
+            <div id="footer-container"></div>
+        </main>
     </div>
 
     <script src="script.js"></script>
 </body>
-    
 </html>
-
-
-
-
-
-
-
