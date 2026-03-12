@@ -18,8 +18,13 @@
     <link rel="manifest" href="/images/favicon/site.webmanifest">
 </head>
 <body>
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar-panel">
         <div class="sidebar-content">
+            <button class="menu-toggle sidebar-close is-close" type="button" aria-label="Close profile panel">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="sidebar-photo">
                 <img src="images/wei.jpg" alt="Portrait of Nianzu Lyu" class="sidebar-photo-img">
             </div>
@@ -53,11 +58,13 @@
     <div class="main-wrapper">
         <nav class="navbar">
             <div class="container nav-shell">
-                <button class="sidebar-toggle" aria-label="Toggle sidebar">
-                    <i class="fas fa-bars"></i>
+                <button class="menu-toggle sidebar-toggle" type="button" aria-label="Open profile panel" aria-expanded="false" aria-controls="sidebar-panel">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
                 <a href="#homepage" class="nav-brand">NL</a>
-                <ul class="nav-menu">
+                <ul class="nav-menu" id="primary-navigation">
                     <li><a href="#homepage">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#publications">Focus</a></li>
@@ -65,7 +72,7 @@
                     <li><a href="#educations">Education</a></li>
                     <li><a href="#skills">Skills</a></li>
                 </ul>
-                <button class="hamburger" aria-label="Toggle menu">
+                <button class="menu-toggle hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
                     <span></span>
                     <span></span>
                     <span></span>

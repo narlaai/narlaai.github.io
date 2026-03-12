@@ -36,14 +36,43 @@ function initializePage() {
     const navMenu = document.querySelector(".nav-menu");
     const sidebar = document.querySelector(".sidebar");
     const sidebarToggle = document.querySelector(".sidebar-toggle");
+    const sidebarClose = document.querySelector(".sidebar-close");
     const sectionLinks = document.querySelectorAll('a[href^="#"]');
     const sections = document.querySelectorAll("section[id]");
     const revealItems = document.querySelectorAll(".reveal");
 
+    const syncMobilePanelState = () => {
+        const navOpen = navMenu?.classList.contains("active") ?? false;
+        const sidebarOpen = sidebar?.classList.contains("active") ?? false;
+        const mobilePanelOpen = window.innerWidth <= 860 && (navOpen || sidebarOpen);
+
+        hamburger?.classList.toggle("active", navOpen);
+        sidebarToggle?.classList.toggle("active", sidebarOpen);
+
+        if (hamburger) {
+            hamburger.setAttribute("aria-expanded", String(navOpen));
+        }
+
+        if (sidebarToggle) {
+            sidebarToggle.setAttribute("aria-expanded", String(sidebarOpen));
+        }
+
+        document.body.classList.toggle("mobile-panel-open", mobilePanelOpen);
+    };
+
+    const setSidebarOpen = (isOpen) => {
+        sidebar?.classList.toggle("active", isOpen);
+        syncMobilePanelState();
+    };
+
+    const setNavMenuOpen = (isOpen) => {
+        navMenu?.classList.toggle("active", isOpen);
+        syncMobilePanelState();
+    };
+
     const closeMobilePanels = () => {
-        navMenu?.classList.remove("active");
-        hamburger?.classList.remove("active");
-        sidebar?.classList.remove("active");
+        setNavMenuOpen(false);
+        setSidebarOpen(false);
     };
 
     sectionLinks.forEach((anchor) => {
@@ -69,12 +98,23 @@ function initializePage() {
     });
 
     sidebarToggle?.addEventListener("click", () => {
-        sidebar?.classList.toggle("active");
+        const nextState = !(sidebar?.classList.contains("active") ?? false);
+        setSidebarOpen(nextState);
+        if (nextState) {
+            setNavMenuOpen(false);
+        }
+    });
+
+    sidebarClose?.addEventListener("click", () => {
+        setSidebarOpen(false);
     });
 
     hamburger?.addEventListener("click", () => {
-        navMenu?.classList.toggle("active");
-        hamburger.classList.toggle("active");
+        const nextState = !(navMenu?.classList.contains("active") ?? false);
+        setNavMenuOpen(nextState);
+        if (nextState) {
+            setSidebarOpen(false);
+        }
     });
 
     document.addEventListener("click", (event) => {
@@ -89,12 +129,11 @@ function initializePage() {
         const clickedNavMenu = navMenu?.contains(target);
 
         if (!clickedInsideSidebar && !clickedSidebarButton && !clickedNavButton) {
-            sidebar?.classList.remove("active");
+            setSidebarOpen(false);
         }
 
         if (!clickedNavMenu && !clickedNavButton) {
-            navMenu?.classList.remove("active");
-            hamburger?.classList.remove("active");
+            setNavMenuOpen(false);
         }
     });
 
@@ -143,8 +182,13 @@ function initializePage() {
     window.addEventListener("resize", () => {
         if (window.innerWidth > 860) {
             closeMobilePanels();
+            return;
         }
+
+        syncMobilePanelState();
     });
+
+    syncMobilePanelState();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
