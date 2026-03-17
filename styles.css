@@ -1,21 +1,21 @@
-﻿* {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 :root {
-    --bg-main: #f4f1eb;
+    --bg-main: #edf3f9;
     --bg-surface: #ffffff;
-    --bg-subtle: #f8f6f2;
-    --bg-muted: #ede7de;
-    --text-main: #1f2933;
-    --text-soft: #5f6975;
-    --text-muted: #8a8f98;
-    --line: #ddd5ca;
-    --line-strong: #c8bcae;
-    --accent: #9b5a34;
-    --accent-soft: #f1e5db;
+    --bg-subtle: #f7fafe;
+    --bg-muted: #e1e9f2;
+    --text-main: #1d2733;
+    --text-soft: #5b6877;
+    --text-muted: #8a95a3;
+    --line: #d6e0ea;
+    --line-strong: #bcc9d8;
+    --accent: #3c648f;
+    --accent-soft: #dde8f4;
     --shadow-soft: 0 10px 30px rgba(31, 41, 51, 0.05);
     --shadow-card: 0 6px 18px rgba(31, 41, 51, 0.04);
     --radius-xl: 28px;
@@ -124,10 +124,9 @@ img {
 }
 
 .sidebar-name {
-    font-family: "Instrument Serif", serif;
     font-size: clamp(2.5rem, 4vw, 3.5rem);
-    line-height: 0.96;
-    font-weight: 400;
+    line-height: 1.02;
+    font-weight: 600;
     letter-spacing: -0.04em;
 }
 
@@ -201,13 +200,13 @@ img {
     padding: 12px 16px;
     border: 1px solid var(--line);
     border-radius: 999px;
-    background: rgba(244, 241, 235, 0.92);
+    background: rgba(237, 243, 249, 0.92);
     box-shadow: 0 4px 14px rgba(31, 41, 51, 0.03);
     backdrop-filter: blur(12px);
 }
 
 .navbar.scrolled .nav-shell {
-    background: rgba(244, 241, 235, 0.97);
+    background: rgba(237, 243, 249, 0.97);
 }
 
 .nav-brand {
@@ -218,9 +217,10 @@ img {
     height: 44px;
     border-radius: 50%;
     background: var(--accent);
-    color: #fffaf6;
-    font-family: "Instrument Serif", serif;
-    font-size: 1.3rem;
+    color: #f8fbff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
     text-decoration: none;
     flex: 0 0 auto;
 }
@@ -325,10 +325,9 @@ img {
 
 .section-title {
     max-width: 12ch;
-    font-family: "Instrument Serif", serif;
     font-size: clamp(2.4rem, 4.8vw, 3.8rem);
-    line-height: 0.98;
-    font-weight: 400;
+    line-height: 1.02;
+    font-weight: 600;
     letter-spacing: -0.04em;
 }
 
@@ -385,9 +384,8 @@ img {
 }
 
 .hero-title em {
-    font-family: "Instrument Serif", serif;
-    font-style: italic;
-    font-weight: 400;
+    font-style: normal;
+    font-weight: 700;
     color: var(--accent);
 }
 
@@ -414,7 +412,7 @@ img {
 .button-primary {
     background: var(--accent);
     border-color: var(--accent);
-    color: #fffaf6;
+    color: #f8fbff;
 }
 
 .button-secondary {
@@ -466,9 +464,9 @@ img {
 }
 
 .metric-value {
-    font-family: "Instrument Serif", serif;
     font-size: 2rem;
     line-height: 1;
+    font-weight: 600;
     color: var(--text-main);
 }
 
@@ -535,8 +533,8 @@ img {
 .focus-index {
     display: inline-block;
     margin-bottom: 20px;
-    font-family: "Instrument Serif", serif;
     font-size: 1.5rem;
+    font-weight: 600;
     color: var(--accent);
 }
 
@@ -793,7 +791,7 @@ img {
         gap: 8px;
         padding: 14px;
         border-radius: 20px;
-        background: rgba(255, 255, 255, 0.98);
+        background: rgba(247, 250, 254, 0.98);
         border: 1px solid var(--line);
         box-shadow: var(--shadow-soft);
         opacity: 0;
