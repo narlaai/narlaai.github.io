@@ -1,4 +1,29 @@
-﻿async function loadModule(modulePath, containerId) {
+function hasInlineSections() {
+    return Boolean(document.querySelector("main section[id]"));
+}
+
+function renderLocalPreviewHint() {
+    const main = document.querySelector("main");
+    if (!main || main.querySelector(".local-preview-notice")) {
+        return;
+    }
+
+    main.innerHTML = `
+        <section class="section">
+            <div class="container">
+                <article class="card-surface about-story local-preview-notice">
+                    <p>Module content could not be loaded in local file mode.</p>
+                    <p>
+                        Open <a href="preview.html" class="project-link">preview.html</a>
+                        for a single-file local preview, or run a local server for the modular version.
+                    </p>
+                </article>
+            </div>
+        </section>
+    `;
+}
+
+async function loadModule(modulePath, containerId) {
     try {
         const response = await fetch(modulePath);
         if (!response.ok) {
@@ -10,12 +35,20 @@
         if (container) {
             container.innerHTML = html;
         }
+
+        return true;
     } catch (error) {
         console.error(`Error loading module ${modulePath}:`, error);
+        return false;
     }
 }
 
 async function loadAllModules() {
+    if (hasInlineSections()) {
+        initializePage();
+        return;
+    }
+
     const modules = [
         { path: "modules/homepage.html", container: "homepage-container" },
         { path: "modules/about.html", container: "about-container" },
@@ -26,7 +59,11 @@ async function loadAllModules() {
         { path: "modules/footer.html", container: "footer-container" }
     ];
 
-    await Promise.all(modules.map((module) => loadModule(module.path, module.container)));
+    const results = await Promise.all(modules.map((module) => loadModule(module.path, module.container)));
+    if (!results.some(Boolean)) {
+        renderLocalPreviewHint();
+    }
+
     initializePage();
 }
 

@@ -9,12 +9,12 @@
     --bg-surface: #ffffff;
     --bg-subtle: #f7fafe;
     --bg-muted: #e1e9f2;
-    --text-main: #1d2733;
-    --text-soft: #5b6877;
-    --text-muted: #8a95a3;
+    --text-main: #000000;
+    --text-soft: #000000;
+    --text-muted: #000000;
     --line: #d6e0ea;
     --line-strong: #bcc9d8;
-    --accent: #3c648f;
+    --accent: #000000;
     --accent-soft: #dde8f4;
     --shadow-soft: 0 10px 30px rgba(31, 41, 51, 0.05);
     --shadow-card: 0 6px 18px rgba(31, 41, 51, 0.04);
@@ -30,8 +30,9 @@ html {
 }
 
 body {
-    font-family: "Space Grotesk", sans-serif;
-    line-height: 1.7;
+    font-family: "Manrope", sans-serif;
+    line-height: 1.65;
+    font-weight: 500;
     color: var(--text-main);
     background: var(--bg-main);
     min-height: 100vh;
@@ -113,26 +114,27 @@ img {
     background: var(--bg-subtle);
     border: 1px solid var(--line);
     font-size: 0.9rem;
-    color: var(--text-soft);
+    color: var(--text-main);
+    font-weight: 600;
 }
 
 .status-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #67a56f;
+    background: var(--text-main);
 }
 
 .sidebar-name {
     font-size: clamp(2.5rem, 4vw, 3.5rem);
     line-height: 1.02;
-    font-weight: 600;
-    letter-spacing: -0.04em;
+    font-weight: 800;
+    letter-spacing: -0.05em;
 }
 
 .sidebar-bio {
     max-width: 24ch;
-    color: var(--text-soft);
+    color: var(--text-main);
     font-size: 1rem;
 }
 
@@ -149,8 +151,9 @@ img {
     border-radius: 999px;
     background: var(--bg-subtle);
     border: 1px solid var(--line);
-    color: var(--accent);
+    color: var(--text-main);
     font-size: 0.84rem;
+    font-weight: 600;
 }
 
 .sidebar-contact {
@@ -171,6 +174,7 @@ img {
     background: var(--bg-surface);
     text-decoration: none;
     font-weight: 500;
+    color: var(--text-main);
     transition: border-color 0.2s ease, background 0.2s ease;
 }
 
@@ -216,10 +220,11 @@ img {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: var(--accent);
-    color: #f8fbff;
+    border: 1px solid var(--line);
+    background: var(--bg-subtle);
+    color: var(--text-main);
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: -0.03em;
     text-decoration: none;
     flex: 0 0 auto;
@@ -239,16 +244,16 @@ img {
     padding: 10px 14px;
     border-radius: 999px;
     text-decoration: none;
-    color: var(--text-soft);
+    color: var(--text-main);
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
     transition: background 0.2s ease, color 0.2s ease;
 }
 
 .nav-menu a:hover,
 .nav-menu a.active {
     background: var(--bg-muted);
-    color: var(--accent);
+    color: var(--text-main);
 }
 
 .menu-toggle {
@@ -318,17 +323,18 @@ img {
 .project-type,
 .mini-card-label {
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.08em;
     font-size: 0.78rem;
-    color: var(--accent);
+    color: var(--text-main);
+    font-weight: 700;
 }
 
 .section-title {
     max-width: 12ch;
     font-size: clamp(2.4rem, 4.8vw, 3.8rem);
     line-height: 1.02;
-    font-weight: 600;
-    letter-spacing: -0.04em;
+    font-weight: 800;
+    letter-spacing: -0.05em;
 }
 
 .section-intro,
@@ -339,7 +345,7 @@ img {
 .education-desc,
 .mini-card p:last-child {
     max-width: 60ch;
-    color: var(--text-soft);
+    color: var(--text-main);
     font-size: 1rem;
 }
 
@@ -377,16 +383,16 @@ img {
 
 .hero-title {
     max-width: 10ch;
-    font-family: "Space Grotesk", sans-serif;
     font-size: clamp(3rem, 5.4vw, 5rem);
     line-height: 0.94;
+    font-weight: 800;
     letter-spacing: -0.06em;
 }
 
 .hero-title em {
     font-style: normal;
-    font-weight: 700;
-    color: var(--accent);
+    font-weight: 800;
+    color: inherit;
 }
 
 .hero-actions {
@@ -410,9 +416,9 @@ img {
 }
 
 .button-primary {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #f8fbff;
+    background: var(--bg-muted);
+    border-color: var(--line-strong);
+    color: var(--text-main);
 }
 
 .button-secondary {
@@ -450,7 +456,7 @@ img {
     margin-top: 10px;
     font-size: 1.5rem;
     line-height: 1.35;
-    font-weight: 600;
+    font-weight: 800;
 }
 
 .hero-metrics {
@@ -466,12 +472,12 @@ img {
 .metric-value {
     font-size: 2rem;
     line-height: 1;
-    font-weight: 600;
+    font-weight: 800;
     color: var(--text-main);
 }
 
 .metric-label {
-    color: var(--text-soft);
+    color: var(--text-main);
     font-size: 0.92rem;
 }
 
@@ -488,7 +494,7 @@ img {
 .about-story {
     padding: 28px;
     font-size: 1rem;
-    color: var(--text-soft);
+    color: var(--text-main);
 }
 
 .about-story p + p {
@@ -511,6 +517,8 @@ img {
 .education-topline h3 {
     margin: 8px 0 10px;
     font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
 }
 
 .focus-grid,
@@ -534,8 +542,8 @@ img {
     display: inline-block;
     margin-bottom: 20px;
     font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--accent);
+    font-weight: 800;
+    color: var(--text-main);
 }
 
 .projects-grid,
@@ -583,9 +591,9 @@ img {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--accent);
+    color: var(--text-main);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .project-link:hover,
@@ -620,7 +628,7 @@ img {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--text-main);
 }
 
 .education-marker::after {
@@ -655,15 +663,16 @@ img {
     border-radius: 999px;
     background: var(--bg-subtle);
     border: 1px solid var(--line);
-    color: var(--accent);
+    color: var(--text-main);
     font-size: 0.84rem;
+    font-weight: 700;
     white-space: nowrap;
 }
 
 .education-school {
     margin-bottom: 10px;
     color: var(--text-main);
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .skill-card {
@@ -679,7 +688,7 @@ img {
     border-radius: 14px;
     background: var(--bg-subtle);
     border: 1px solid var(--line);
-    color: var(--accent);
+    color: var(--text-main);
     font-size: 1.25rem;
 }
 
@@ -700,13 +709,13 @@ img {
 
 .footer p,
 .footer a {
-    color: var(--text-soft);
+    color: var(--text-main);
     text-decoration: none;
 }
 
 .footer a:hover,
 .footer a:focus-visible {
-    color: var(--accent);
+    color: var(--text-main);
     outline: none;
 }
 
